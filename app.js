@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
 const https = require("https");
+const port = process.env.port || 3000;
 
 const app = express();
 app.use(express.static("public"));
@@ -55,7 +56,7 @@ app.post("/failure", function(req, res){
   res.redirect("/");
 });
 
-app.listen("3000", function(){
+app.listen(port, function(){
   console.log("Server is running on port 3000");
 });
 
